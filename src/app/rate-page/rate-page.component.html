@@ -1,0 +1,12 @@
+<div class="flex justify-center">
+
+    <div class="p-4 max-w-2xl">
+        <form [formGroup]="rateForm">
+            <label for="hourlyRate">Fill in your base hourly rate: </label>
+            <input type="number" formControlName="hourlyRate" class="inputs">
+            <button class="mt-2 font-semibold bg-primary-600 rounded-md text-slate-300 px-5 py-1"
+                (click)="onSubmit()">Save</button>
+        </form>
+    </div>
+
+</div>

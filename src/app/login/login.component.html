@@ -1,0 +1,20 @@
+<div class="w-full h-svh flex items-center justify-center">
+    <div class="border-2 border-solid border-primary-400 p-4 rounded-3xl">
+        <h2 class="text-2xl font-bold text-center mb-4">Login Form</h2>
+        <form [formGroup]="loginForm">
+            <div>
+                <input class="border-2 border-solid border-primary-300 rounded-md mb-4 px-2" type="text" id="username" formControlName="username" name="username" placeholder="Username">
+            </div>
+            <div>
+                <input class="border-2 border-solid border-primary-300 rounded-md mb-4 px-2" type="password" id="password" formControlName="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="w-full flex justify-center">
+                <button class="font-semibold bg-primary-600 rounded-md text-slate-300 px-5 py-1" type="submit" (click)="onLogin()">Login</button>
+            </div>
+            <div class="flex justify-center mt-2 underline">
+                <a href="">Forgot Password?</a>
+            </div>
+        </form>
+        <div *ngIf="errorMessage" class="w-full text-red-600 text-center">{{ errorMessage }}</div>
+    </div>
+</div>

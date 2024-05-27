@@ -1,0 +1,21 @@
+<div class="p-4 flex justify-center">
+    <form [formGroup]="scheduleForm">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th *ngFor="let slot of timeSlots">{{ slot }}</th>
+            </tr>
+          </thead>
+          <tbody formArrayName="schedule">
+            <tr *ngFor="let daySchedule of schedule().controls; let i = index" [formGroupName]="i">
+              <td>{{ daysOfWeek[i] }}</td>
+              <td *ngFor="let slot of timeSlots">
+                <input class="" type="checkbox" [formControlName]="slot" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="font-semibold bg-primary-600 rounded-md text-slate-300 px-5 p-1 my-2" type="submit" (click)="onSubmit()">Save Shift</button>
+      </form>
+</div>

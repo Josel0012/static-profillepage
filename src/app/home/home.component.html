@@ -1,0 +1,22 @@
+<div class="w-full min-h-14 bg-primary-600 grid grid-cols-3 items-center justify-between px-12 text-slate-200">
+    <div class="text-2xl font-extrabold whitespace-nowrap col-span-3 sm:col-span-1 text-center sm:text-left">
+        SW-PROFILE
+    </div>
+    <div class="col-span-3 sm:col-span-1 bg-primary-700 p-2">
+        <ul class="flex gap-6 justify-center">
+            <li class=" hover:cursor-pointer font-semibold whitespace-nowrap text-center" *ngFor="let menu of menus"
+                (click)="switchContent(menu.page)">
+                {{menu.title}}
+            </li>
+        </ul>
+    </div>
+    <div class="flex justify-center col-span-3 sm:col-span-1 text-center sm:justify-end">
+        <button (click)="logOut()">Logout</button>
+    </div>
+</div>
+
+<div class="max-w-4xl mx-auto">
+    <app-bio-page *ngIf="currentPage === 'bio'"></app-bio-page>
+    <app-shift-page *ngIf="currentPage === 'shift'"></app-shift-page>
+    <app-rate-page *ngIf="currentPage === 'rate'"></app-rate-page>
+</div>

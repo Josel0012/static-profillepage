@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.inputs {
+    @apply border-2 border-solid w-full border-primary-300 rounded-md px-4
+}
+
+td,th {
+    @apply px-2 border-2 border-solid border-primary-600
+}
